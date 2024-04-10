@@ -1,3 +1,17 @@
-import { Routes } from '@angular/router';
+import { RouterModule,  Routes } from '@angular/router';
+import { ListEmployeeComponent } from './list-employee/list-employee.component';
+import { CreateEmployeeComponent } from './create-employee/create-employee.component';
+import { NgModule } from '@angular/core';
+import { UpdateEmployeeComponent } from './update-employee/update-employee.component';
+import { EmployeeDetailsComponent } from './employee-details/employee-details.component';
+export const routes: Routes = [
 
-export const routes: Routes = [];
+    {path:'employees', component:ListEmployeeComponent},
+    {path:'create-employee',component:CreateEmployeeComponent},
+    {path:'', redirectTo:'employees', pathMatch:'full'},
+    {path:'update-employee/:id',component:UpdateEmployeeComponent},
+    {path:'employee-details/:id',component:EmployeeDetailsComponent}
+    
+   
+
+];
